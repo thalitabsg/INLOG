@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="us">
+<head>
+<meta charset="utf-8">
+<title>Simulador coletor</title>
+<link href="jquery-ui.css" rel="stylesheet">
+<link href="macro.css" rel="stylesheet">
+<link href="fonts/stylesheet.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="javascript.js"></script>
+</head>
+<body>
+<div class="corpo">
+<div id="screen">
+<div id="title"></div>
+<div id="content"></div>
+</div>
+<div class="clear"></div>
+<a href="javascript://" class="start" id="macro">Macro</a>
+<a href="javascript://" class="esc" id="esc">ESC</a>
+<a href="javascript://" class="ok" id="ok">OK</a>
+<div id="out">
+<div id="ArrowUp" class="button">
+<i class="fa fa-sort-asc" aria-hidden="true"></i>
+</div>
+<div id="ArrowDown" class="button">
+<i class="fa fa-sort-desc" aria-hidden="true"></i>
+</div>
+</div>
+<div class="clear"></div>
+<div id="keyboard">
+<div class="button" id="1">1</div>
+<div class="button" id="2">2</div>
+<div class="button" id="3">3</div>
+<div class="button" id="4">4</div>
+<div class="button" id="5">5</div>
+<div class="button" id="6">6</div>
+<div class="button" id="7">7</div>
+<div class="button" id="8">8</div>
+<div class="button" id="9">9</div>
+<div class="button zero" id="">0</div>
+</div>
+</div>
+<ul id="navigationOptions">
+<li id="202"><div>CD_SERVICO</div><ul><li on-enter="203"><div>001 - DOMICILIAR</div></li></ul></li>             
+
+<li id="203"><div>CD_REGIONAL</div><ul><li on-enter="204"><div>001 - SAO JOSE DOS CAMPOS</div></li></ul></li>             
+
+<li id="204"><div>CD_SETOR</div><ul><li on-enter="301"><div><input maxlength="3" type="text"/></div></li></ul></li>             
+
+<li id="301"><div>MTR_MOTORISTA</div><ul><li on-enter="302"><div><input maxlength="4" type="text"/></div></li></ul></li>
+<li id="302"><div>MTR_COLETOR1</div><ul><li on-enter="303"><div><input maxlength="4" type="text"/></div></li></ul></li>
+<li id="303"><div>MTR_COLETOR2</div><ul><li on-enter="304"><div><input maxlength="4" type="text"/></div></li></ul></li>
+<li id="304"><div>MTR_COLETOR3</div><ul><li on-enter="305"><div><input maxlength="4" type="text"/></div></li></ul></li>
+<li id="305"><div>MTR_COLETOR4</div><ul><li on-enter="401"><div><input maxlength="4" type="text"/></div></li></ul></li>
+
+<li id="401"><div>CD_ATIVIDADE</div><ul><li on-enter="40101"><div>01 - SAIDA GARAGEM</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="501"><div>22 - FINALIZAR</div></li></ul></li>
+<li id="40101"><div>CD_ATIVIDADE</div><ul><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li></ul></li>
+<li id="40102"><div>CD_ATIVIDADE</div><ul><li on-enter="40103"><div>03 - FIM DESLOCAMENTO</div></li></ul></li>
+<li id="40103"><div>CD_ATIVIDADE</div><ul><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>
+<li id="40104"><div>CD_ATIVIDADE</div><ul><li on-enter="40105"><div>05 - FIM COLETA</div></li></ul></li>
+<li id="40105"><div>CD_ATIVIDADE</div><ul><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>
+<li id="40106"><div>CD_ATIVIDADE</div><ul><li on-enter="40108"><div>08 - INI DESCARGA</div></li></ul></li>
+<li id="40107"><div>CD_ATIVIDADE</div><ul><li on-enter="40108"><div>08 - INI DESCARGA</div></li></ul></li>
+<li id="40108"><div>CD_ATIVIDADE</div><ul><li on-enter="40109"><div>09 - FIM DESCARGA</div></li></ul></li>
+
+<li id="40109"><div>TICKET</div><ul><li on-enter="4010901"><div><input maxlength="6" type="text"/></div></li></ul></li>
+<li id="4010901"><div>PESO</div><ul><li on-enter="4010902"><div><input maxlength="5" type="text"/></div></li></ul></li><li id="4010902"><div>CD_ATIVIDADE</div><ul><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>     
+<li id="40110"><div>CD_ATIVIDADE</div><ul><li on-enter="40111"><div>11 - INI SOS </div></li></ul></li>
+<li id="40111"><div>CD_ATIVIDADE</div><ul><li on-enter="40112"><div>12 - FIM SOS</div></li></ul></li>
+<li id="40112"><div>CD_ATIVIDADE</div><ul><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>
+<li id="40113"><div>CD_ATIVIDADE</div><ul><li on-enter="40114"><div>14 - FIM REFEICAO </div></li></ul></li>
+<li id="40114"><div>CD_ATIVIDADE</div><ul><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>
+
+<li id="40115"><div>LITROS</div><ul><li on-enter="4011501"><div> <input maxlength="5" type="text"/></div></li></ul></li><li id="4011501"><div>CD_ATIVIDADE</div><ul><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>     
+
+<li id="40116"><div>TROCA MOTORISTA</div><ul><li on-enter="4011601"><div> <input maxlength="4" type="text"/></div></li></ul></li><li id="4011601"><div>CD_ATIVIDADE</div><ul><li on-enter="40101"><div>01 - SAIDA GARAGEM</div></li><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>   
+<li id="40117"><div>CD_ATIVIDADE</div><ul><li on-enter="40118"><div>18 - FIM ESPERA</div></li></ul></li>
+<li id="40118"><div>CD_ATIVIDADE</div><ul><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40119"><div>19 - INI OUTROS</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>
+<li id="40119"><div>CD_ATIVIDADE</div><ul><li on-enter="40120"><div>20 - FIM OUTROS</div></li></ul></li>
+<li id="40120"><div>CD_ATIVIDADE</div><ul><li on-enter="40102"><div>02 - INI DESLOCAMENTO</div></li><li on-enter="40104"><div>04 - INI COLETA</div></li><li on-enter="40106"><div>06 - TRANSBORDO</div></li><li on-enter="40107"><div>07 - BALANCA</div></li><li on-enter="40110"><div>10 - PEDIDO SOS</div></li><li on-enter="40113"><div>13 - INI REFEICAO </div></li><li on-enter="40115"><div>15 - ABASTECIMENTO</div></li><li on-enter="40116"><div>16 - TROCA MOTORISTA</div></li><li on-enter="40117"><div>17 - INI ESPERA</div></li><li on-enter="501"><div>21 - CHEGADA GARAGEM</div></li></ul></li>
+
+<li id="501"><div>FINALIZAR</div><ul><li on-enter="202"><div>01 - SIM</div></li><li on-enter="401"><div>02 - NÃO</div></li></ul></li>
+<!--li id="50101"><div>FINALIZAR</div><ul><li on-enter="202"><div> - CD_SERVICO</div></li></ul></li>
+<li id="50102"><div>FINALIZAR</div><ul><li on-enter="401"><div> - CD_ATIVIDADE</div></li></ul></li-->
+
